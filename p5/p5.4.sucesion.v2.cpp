@@ -3,15 +3,16 @@ using namespace std;
 
 
 int main () {
-	int an, a0, a1, a2, m, n;
-	cout << "introduce un m para calcular an > m ";
-	cin >> m;
-	n=0;
+	int an, a0, a1, a2, nTerminos, n;
+	do{
+		cout << "introduce un N para calcular los términos ";
+		cin >> nTerminos;
+	}while(!(nTerminos>=0));
 	a0=0;
 	a1=0;
 	a2=0;
 	an=0;
-	while (an <= m){ //n más pequeño tal que an > m
+	for(n=0;n <= nTerminos;n++){
 		switch (n){
 			case 0:	an=1; break;
 			case 1: an=2; break;
@@ -21,12 +22,10 @@ int main () {
 			   break;
 		}
 		cout << "a("<< n << ")=" << an << endl;
-		n++;
 		a0=a1;
 		a1=a2;
 		a2=an;
 	}
-	cout << "n es " << n-1 << endl;
 }
 
 
